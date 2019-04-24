@@ -102,7 +102,8 @@ class ssh_hardening::server (
     $default_hardened_options = {
       # Basic configuration
       # ===================
-
+      'HostKeyAlgorithms'  => 'ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa',
+      'AuthorizedKeysFile' => '.ssh/authorized_keys',
       # Either disable or only allow root login via certificates.
       'PermitRootLogin'                 => $permit_root_login,
 
